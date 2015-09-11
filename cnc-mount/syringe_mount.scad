@@ -1,3 +1,9 @@
+/********************************************************
+This file is part of the RepRapPNP project, developed at the University of Hamburg.
+Author: Florens Wasserfall <wasserfall@kalanka.de> 
+License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/agpl.html' 
+*******************************************************/
+
 use <../inc/nema.scad>
 use <../inc/Flexible_Coupling_param.scad>
 use <../inc/Thread_Library.scad>
