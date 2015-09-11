@@ -1,12 +1,19 @@
-// Smoooooooth
+/********************************************************
+This file is part of the RepRapPNP project, developed at the University of Hamburg.
+Author: Florens Wasserfall <wasserfall@kalanka.de> 
+License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/agpl.html' 
+*******************************************************/
+
+// general object resolution
 $fn = 50;
 
 
 nema_xy = 42.0;
 nema_11_xy = 28.5;
 
-
+//render object
 //nema11(10);
+//nema17(screw_length = 10, screw_heads = true);
 
 //nema 17 motor screws and shaft
 module nema17(screw_length, screw_heads = false){
@@ -38,7 +45,7 @@ module nema11(screw_length, screw_heads = false){
 			}
 		}
 		//body
-		translate([0, 0, -26.905]) cube(size=[nema_11_xy, nema_11_xy, 50], center=true);
+		translate([0, 0, -45/2-1.905]) cube(size=[nema_11_xy, nema_11_xy, 45], center=true);
 		translate([0, 0, -1.905]) cylinder(r=12.2, h=2.2, center=false);
 
 		//shaft
