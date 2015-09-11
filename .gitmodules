@@ -1,0 +1,3 @@
+[submodule "RepRap-Industrial-mount/RepRap-Industrial"]
+	path = RepRap-Industrial-mount/RepRap-Industrial
+	url = https://github.com/kuehlingkuehling/RepRap-Industrial.git
