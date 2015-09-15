@@ -9,6 +9,7 @@ License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/a
 
 include <RepRap-Industrial/configuration.scad>
 use <RepRap-Industrial/x-carriage.scad>
+use <camera_clip_sanyoHD2100P.scad>
 include <../inc/syringe.scad>
 include <../inc/nema.scad>
 use <../inc/transmission_gears.scad>
@@ -36,6 +37,9 @@ body_length = 80;
 
 //syringe_idler();
 //translate([-25, 45, x_carriage_body_height/2]) vacuum_mount_idler();
+
+//camera clip
+//translate([45, -1, x_carriage_body_height/2+17.5]) camera_clip();
 /////////////////////////////////////////////////////////////////////////
 
 
