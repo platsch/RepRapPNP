@@ -9,7 +9,7 @@ $fn = 50;
 
 thickness = 5;
 width = 60;
-tube_dia = 5;
+tube_dia = 6;
 
 //pressure_wheel();
 servo_mount();

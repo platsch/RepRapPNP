@@ -12,6 +12,8 @@ use <RepRap-Industrial/x-carriage.scad>
 use <camera_clip_sanyoHD2100P.scad>
 include <../inc/syringe.scad>
 include <../inc/nema.scad>
+include <./vacuum_mount.scad>
+include <./vacuum_mount_endstop.scad>
 use <../inc/transmission_gears.scad>
 use <../inc/cameras/sanyo/HD2100P.scad>
 
@@ -25,8 +27,6 @@ x_carriage_syringe_body_length = 80+10;
 body_length = 80;
 
 /////////////// environtment objects ////////////////////////////////////
-//#pipette();  //vacuum gripper
-//translate([0, 0, -17]) ballbearing();
 
 // RENDER X CARRIAGE
 //rotate([0,-90,0]) x_carriage();
@@ -37,6 +37,8 @@ body_length = 80;
 
 //syringe_idler();
 //translate([-25, 45, x_carriage_body_height/2]) vacuum_mount_idler();
+//translate([-25, 25, 60]) rotate([0, 0, -90]) vacuum_nema_mount();
+//translate([-25, 0, 40]) rotate([0, 0, 90]) vacuum_mount_endstop(dia_out=20, dia_in=10, h=7);
 
 //camera clip
 //translate([45, -1, x_carriage_body_height/2+17.5]) camera_clip();
@@ -58,14 +60,22 @@ module x_carriage_combined() {
 	        //vacuum gripper mods
 	        translate([-25, 0, 0]) {
 	        	//vacuum_gripper hole
-	        	cylinder(r=7, h=100, center=true);
+	        	cylinder(r=6, h=100, center=true);
+	        	//vacuum gripper upper ball bearing
+	        	translate([0, 0, x_carriage_body_height/2-3]) cylinder(r=15/2+0.1, h=4, center=false);
 	        	//vacuum gripper lower ball bearing
-	        	translate([0, 0, -x_carriage_body_height/2+2]) cylinder(r=19/2, h=7, center=false);
+	        	translate([0, 0, -x_carriage_body_height/2+2]) cylinder(r=19/2+0.05, h=7, center=false);
 	        }
 
 	        //camera mods
 			translate([20, 0, 0]) {
+				//camera hole
 	        	cylinder(r=18, h=100, center=true);
+	        	//screws for LED ring
+        		for(k=[0:3]) {
+        			rotate([0, 0, 90*k]) translate([16, 16, -x_carriage_body_height/2]) cylinder(r=1.5, h=20, center=true);
+        		}
+	        	
 	        }        
 
 	    }
@@ -98,8 +108,9 @@ module printer() {
 }
 
 module vacuum_mount() {
-	//#translate([0, 0, -16]) pipette();
-	translate([0, -25, 74]) rotate([0, 0, 90]) rotate([0, 0, 0]) transmission_gears(axis_dist=50, h=10, hub=6);
+	//pipette
+	//#translate([0, -25, 0]) cylinder(r=9.6/2, h=100, center=true);;
+	//translate([0, -25, 74]) rotate([0, 0, 90]) rotate([0, 0, 0]) transmission_gears(axis_dist=50, h=10, hub=6);
 
 	//nema mount
 	difference() {
