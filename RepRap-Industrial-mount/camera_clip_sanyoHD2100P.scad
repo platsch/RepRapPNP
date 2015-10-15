@@ -13,9 +13,10 @@ $fn=50;
 rotate([0, 90, 0]) camera_clip();
 
 module camera_clip() {
+    thickness = 8;
 	difference() {
 		// mount screws for printer
-		translate([0, 0, 18]) cube(size=[6, 96, 36], center=true);
+		translate([0, 0, 19]) cube(size=[thickness, 96, 38], center=true);
 		for(i=[-1,1]){
 			for(k=[-1, 1]) {
 				translate([0, i*43, 15+k*7.5]) rotate([0, 90, 0]) cylinder(r=1.8, h=20, center=true);
@@ -23,13 +24,13 @@ module camera_clip() {
 		}
 
 		// space for camera
-		translate([-3, 0, 18]) cube(size=[3, 80, 40], center=true);
+		translate([-thickness/2, 0, 19]) cube(size=[3, 80, 40], center=true);
 
 		//mount screws for camera
 		for(i=[-1, 1]) {
 			hull() {
 				for(k=[0, 1]) { 
-		   			translate([0, i*(28/2), 8+k*20]) rotate([0, 90, 0]) cylinder(r=1.8, h=20, center=true);
+		   			translate([0, i*(28/2), 8+k*21]) rotate([0, 90, 0]) cylinder(r=1.8, h=20, center=true);
 		   		}
 		   	}
 		}
