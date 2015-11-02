@@ -4,18 +4,19 @@ $fn = 50;
 use <parametric_involute_gear_v5.0.scad>
 
 
-transmission_gears(axis_dist = 50);
+//transmission_gears(axis_dist = 50);
+//transmission_gears(axis_dist=50, h=10, hub=6, bore_dia=9.8, assembled = false);
 
-module transmission_gears(axis_dist=60, h=7, hub=10, assembled=true) {
+module transmission_gears(axis_dist=60, h=7, hub=10, bore_dia = 10.2, assembled=true) {
 	if(assembled) {
-		double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=10.4, circles=0);
+		double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=bore_dia, circles=0);
 		translate([axis_dist/2, 0, 0]) rotate([0, 0, 360/15]) rotate([180, 0, 0]) double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h-2, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2-4, bore_diameter=5.4, circles=0);
-		translate([axis_dist, 0, 0]) double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=10.4, circles=0);
+		translate([axis_dist, 0, 0]) double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=bore_dia, circles=0);
 	}else{
 		rotate([180, 0, 0]) {
-			double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=10.4, circles=0);
+			double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=bore_dia, circles=0);
 			translate([axis_dist/1.5, 0, h/2+2]) rotate([0, 180, 0]) double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h-2, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2-4, bore_diameter=5.4, circles=0);
-			translate([2*(axis_dist/1.5), 0, 0]) double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=10.4, circles=0);
+			translate([2*(axis_dist/1.5), 0, 0]) double_helix_gear(pitch_diameter=axis_dist/2, rim_thickness = h, rim_width=0, gear_thickness = h, hub_thickness = h+hub, hub_diameter=axis_dist/2+3, bore_diameter=bore_dia, circles=0);
 		}
 	}
 }

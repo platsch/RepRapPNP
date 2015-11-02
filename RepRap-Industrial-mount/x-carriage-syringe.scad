@@ -12,6 +12,7 @@ use <RepRap-Industrial/x-carriage.scad>
 use <camera_clip_sanyoHD2100P.scad>
 include <../inc/syringe.scad>
 include <../inc/nema.scad>
+include <../inc/led_ring/led_ring.scad>
 include <./vacuum_mount.scad>
 include <./vacuum_mount_endstop.scad>
 use <../inc/transmission_gears.scad>
@@ -42,6 +43,8 @@ body_length = 80;
 
 //camera clip
 //translate([45, -1, x_carriage_body_height/2+17.5]) camera_clip();
+//camera led ring
+translate([20, 0, -x_carriage_body_height/2-5]) led_ring_base();
 /////////////////////////////////////////////////////////////////////////
 
 
