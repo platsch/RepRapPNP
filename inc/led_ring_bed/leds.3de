@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<electronics version="0.1">
+	<filename source="leds.sch" />
+	<parts>
+		<part name="LED1" library="led" deviceset="*W51M" device="" package="W51">
+			<attributes partHeight="3.1000000000000001" footprintHeight="0.29999999999999999" placed="true" />
+			<position X="-20" Y="-11" Z="3" />
+			<rotation X="0" Y="0" Z="-55" />
+		</part>
+		<part name="LED2" library="led" deviceset="*W51M" device="" package="W51">
+			<attributes partHeight="3.1000000000000001" footprintHeight="0.29999999999999999" placed="true" />
+			<position X="0" Y="-22.5" Z="3" />
+			<rotation X="0" Y="0" Z="0" />
+		</part>
+		<part name="LED3" library="led" deviceset="*W51M" device="" package="W51">
+			<attributes partHeight="3.1000000000000001" footprintHeight="0.29999999999999999" placed="true" />
+			<position X="20" Y="-11" Z="3" />
+			<rotation X="0" Y="0" Z="55" />
+		</part>
+		<part name="LED4" library="led" deviceset="*W51M" device="" package="W51">
+			<attributes partHeight="3.1000000000000001" footprintHeight="0.29999999999999999" placed="true" />
+			<position X="-20" Y="13" Z="3" />
+			<rotation X="0" Y="0" Z="55" />
+		</part>
+		<part name="LED5" library="led" deviceset="*W51M" device="" package="W51">
+			<attributes partHeight="3.1000000000000001" footprintHeight="0.29999999999999999" placed="true" />
+			<position X="0" Y="24.5" Z="3" />
+			<rotation X="0" Y="0" Z="0" />
+		</part>
+		<part name="LED6" library="led" deviceset="*W51M" device="" package="W51">
+			<attributes partHeight="3.1000000000000001" footprintHeight="0.29999999999999999" placed="true" />
+			<position X="20" Y="13" Z="3" />
+			<rotation X="0" Y="0" Z="-55" />
+		</part>
+	</parts>
+	<nets>
+		<net name="N$1">
+			<waypoints />
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED1" pin="C" />
+					</endpoint_a>
+					<endpoint_b type="part">
+						<part name="LED2" pin="A" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$2">
+			<waypoints />
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED4" pin="C" />
+					</endpoint_a>
+					<endpoint_b type="part">
+						<part name="LED5" pin="A" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$3">
+			<waypoints />
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED3" pin="A" />
+					</endpoint_a>
+					<endpoint_b type="part">
+						<part name="LED2" pin="C" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$4">
+			<waypoints />
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED6" pin="A" />
+					</endpoint_a>
+					<endpoint_b type="part">
+						<part name="LED5" pin="C" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$5">
+			<waypoints>
+				<waypoint key="2">
+					<position X="-23.924162088677576" Y="-0.85187673454259993" Z="2.75" />
+				</waypoint>
+				<waypoint key="3">
+					<position X="-21.65286973559239" Y="0.24518081040537254" Z="2.75" />
+				</waypoint>
+				<waypoint key="4">
+					<position X="-26.458660112065331" Y="0.51088304969528053" Z="2.75" />
+				</waypoint>
+			</waypoints>
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED1" pin="A" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="2" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="3" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="4" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$6">
+			<waypoints>
+				<waypoint key="2">
+					<position X="-23.674185419412879" Y="3.4769565531932187" Z="2.75" />
+				</waypoint>
+				<waypoint key="3">
+					<position X="-21.664240151788249" Y="2.2099633044792313" Z="2.75" />
+				</waypoint>
+				<waypoint key="4">
+					<position X="-26.35063406924246" Y="2.6748351572143747" Z="2.75" />
+				</waypoint>
+			</waypoints>
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED4" pin="A" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="2" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="3" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="4" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$7">
+			<waypoints>
+				<waypoint key="2">
+					<position X="24.086318271807443" Y="3.4158399532624202" Z="2.75" />
+				</waypoint>
+				<waypoint key="3">
+					<position X="26.586073536250467" Y="2.6484171906895853" Z="2.75" />
+				</waypoint>
+				<waypoint key="4">
+					<position X="21.753045039691756" Y="2.602126080348043" Z="2.75" />
+				</waypoint>
+			</waypoints>
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED6" pin="C" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="2" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="3" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="4" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+		<net name="N$8">
+			<waypoints>
+				<waypoint key="2">
+					<position X="23.878206643472993" Y="-0.94171421307902392" Z="2.75" />
+				</waypoint>
+				<waypoint key="3">
+					<position X="21.365532742325456" Y="0.38005658725944613" Z="2.75" />
+				</waypoint>
+				<waypoint key="4">
+					<position X="26.437126668621488" Y="0.42350193365933819" Z="2.75" />
+				</waypoint>
+			</waypoints>
+			<wires>
+				<wire>
+					<endpoint_a type="part">
+						<part name="LED3" pin="C" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="2" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="3" />
+					</endpoint_b>
+				</wire>
+				<wire>
+					<endpoint_a type="waypoint">
+						<waypoint key="2" />
+					</endpoint_a>
+					<endpoint_b type="waypoint">
+						<waypoint key="4" />
+					</endpoint_b>
+				</wire>
+			</wires>
+		</net>
+	</nets>
+</electronics>
