@@ -13,7 +13,7 @@ translate([0,0,-25.5-1.6*3]){
     %camera_mount(2,1.6);
 }
 %translate([0,0,5.4]) rotate([180, 0, 0])  {
-    include <basler/lens_cover_ring.scad>;
+    include <../cameras/basler/lens_cover_ring.scad>;
 }
 
 module led_ring(t,r1,r2){

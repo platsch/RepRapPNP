@@ -8,14 +8,14 @@ License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/a
 $fn = 50;
 
 // camera visualization
-//include <sanyo/HD2100P.scad>;
+//include <../cameras/sanyo/HD2100P.scad>;
 //%rotate([180,0,0]) HD2100P();
 //%translate([0, 0, 2.5]) {
-//    include <lens_adapter.scad>;
+//    include <../cameras/lens_adapter.scad>;
 //}
 //%rotate([0, 90, 0]) translate([-5, 0, 0])import("basler/Basler Lens 8mm C-Mount v02.stl");
 //%translate([0,0,33+2.7]) rotate([180, 0, 0])  {
-//    include <basler/lens_cover_ring.scad>;
+//    include <../cameras/basler/lens_cover_ring.scad>;
 //}
 
 
