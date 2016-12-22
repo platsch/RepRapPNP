@@ -31,20 +31,20 @@ module camera_mount(t,r_h){
                     }
                 }
                 hull() {
-                    translate([0, -t-(8-t)/2, -5]) cube([28+10,8-t,20], center=true);
-                    translate([0,-t/2,-20]) cube([28+10,t,1], center=true);
+                    translate([0, -t-(8-t)/2, -5+1.5]) cube([28+10,8-t,17], center=true);
+                    translate([0,-t/2,-11]) cube([28+10,t,1], center=true);
                 }
             }   
             translate([0, -t/2, -12.8]) rotate([90, 0, 0]) cube([18,15.5,t+30], center=true);
               for(i=[-1, 1]) {
-                  translate([i*(28/2), 0, -30.5+5]) rotate([90, 0, 0]) cylinder(r=r_h, h=t*3, center=true);
+                  translate([i*(26/2), 0, -30.5+5]) rotate([90, 0, 0]) cylinder(r=r_h, h=t*3, center=true);
               }
               for(i=[-1, 1]) {
-                  translate([i*(28/2), -4, 5-8]) cylinder(r=r_h, h=16.1, center=true);
+                  translate([i*(28/2), -4.5, 5-8]) cylinder(r=r_h, h=16.1, center=true);
               }
               for(i=[-1, 1]) {
                   for(j=[0,2,t+2]) {
-                  translate([i*(28/2), -4+j, 5-1.5-8]) rotate([0, 0, 90]) cylinder(r=3.4,h=3,$fn =6, center=true);
+                  translate([i*(28/2), -4.5+j, 5-1.5-8]) rotate([0, 0, 90]) cylinder(r=3.3,h=3,$fn =6, center=true);
                   }
               }
         }
