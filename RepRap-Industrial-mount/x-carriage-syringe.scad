@@ -3,8 +3,8 @@ This file is part of the RepRapPNP project, developed at the University of Hambu
 
 It heavily relies on the work by Jonas and Simon Kühling for the RepRap-Industrial design.
 
-Author: Florens Wasserfall <wasserfall@kalanka.de> 
-License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/agpl.html' 
+Author: Florens Wasserfall <wasserfall@kalanka.de>
+License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/agpl.html'
 *******************************************************/
 
 include <RepRap-Industrial/configuration.scad>
@@ -26,6 +26,7 @@ syringe_z_offset = 17;
 //override some variables from Kühling inc
 x_carriage_syringe_body_length = 80+10;
 body_length = 80;
+clearance_tight = 0.25;
 
 //camera led ring
 translate([20, 0, -x_carriage_body_height/2-5]) {
@@ -86,8 +87,8 @@ module x_carriage_combined() {
         		for(k=[0:3]) {
         			rotate([0, 0, 90*k]) translate([16, 16, -x_carriage_body_height/2]) cylinder(r=1.5, h=20, center=true);
         		}
-	        	
-	        }        
+
+	        }
 
 	    }
 
@@ -354,8 +355,3 @@ module x_carriage_syringe(){
 							cylinder(r=belt_tensioning_screw_dia/2+clearance+wall_thin,h=layer_height);
 	}
 }
-
-
-
-
-

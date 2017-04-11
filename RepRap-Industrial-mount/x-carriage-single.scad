@@ -23,7 +23,8 @@ License:
 
 include <RepRap-Industrial/configuration.scad>
 
-
+//override some variables from Kühling inc
+clearance_tight = 0.25;
 
 // RENDER X CARRIAGE
 rotate([0,-90,0]) x_carriage_single();
