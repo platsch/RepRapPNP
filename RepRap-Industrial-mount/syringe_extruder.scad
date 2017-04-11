@@ -31,6 +31,7 @@ module syringe_extruder() {
 		    motor_mount();
 		    %translate([0, 0, -0.1]) motors();
 		}
+        translate([-7.5, -42, 80])rotate([90,0,0])cylinder(h=8, r=3/2, center=true);
 	}
 
 }
