@@ -62,7 +62,7 @@ module x_carriage_combined() {
 
 	        //vacuum gripper mods
 	        translate([-30, 0, 15]) {
-                cube([28.5+2*3+2*2,28.5+15,20],center=true);
+                cube([28.5+2*3+2*2,28.5+14.7,20],center=true);
 	        }
             translate([-30, 0, -15]) {
                 cube([28.5+11.51,28.5+14.7,20],center=true);
@@ -158,8 +158,8 @@ module syringe_slide_mount() {
                 	translate([i*10,10-3,0]) rotate([90, 0, 0]) cylinder(h=3, r=6.8/2, center=true, $fn=6);
             	}
 	        }
-	        translate([-42.5,5.2,14])cube([85,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
-			translate([-42.5,5.2+3,-25])cube([85,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
+	        translate([-42.5,5,12])cube([85,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
+			translate([-42.5,5+2,-25])cube([85,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
 		}
 		%translate([0,-(10-4)/2,(100-20)/2])rotate([90,0,0])servo_mount();
 	}
@@ -193,8 +193,8 @@ module pnp_slide_mount() {
                 	translate([i*10,10-3,0]) rotate([90, 0, 0]) cylinder(h=3, r=6.8/2, center=true, $fn=6);
             	}
 	        }
-	        translate([-22.5,5.2,14])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
-			translate([-22.5,5.2+3,-25])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
+	        translate([-22.5,5,12])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
+			translate([-22.5,5+2,-25])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
 		}
 		%translate([0,-(10-4)/2,(100-20)/2])rotate([90,0,0])servo_mount();
 	}
@@ -219,13 +219,13 @@ module camera_mount_basler_ace() {
 				}
 			}
 			translate([0, 0, 15+23.7-15]) rotate([90, 0, 0]) cylinder(r=1.7, h=40, center=true);
-			translate([0,10-6,15+23.7-15]) rotate([90, 0, 0]) cylinder(h=3, r=6.8/2, center=true, $fn=6);
+			translate([0,10-6,15+23.7-15]) rotate([90, 0, 0]) cylinder(h=3, r=6.8/2, center=true);
 			for(i=[-1, 1]) {
 				translate([i*10, 0, 15-15]) rotate([90, 0, 0]) cylinder(r=1.7, h=40, center=true);
-				translate([i*10,10-6,15-15]) rotate([90, 0, 0]) cylinder(h=3, r=6.8/2, center=true, $fn=6);
+				translate([i*10,10-6,15-15]) rotate([90, 0, 0]) cylinder(h=3, r=6.8/2, center=true);
 			}
-			translate([-22.5,5.2,8])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
-			translate([-22.5,5.2+3,-20])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
+			translate([-22.5,5,4])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
+			translate([-22.5,5+2,-20])cube([45,frame_cable_mount_zip_tie_thickness,frame_cable_mount_zip_tie_width]);
         //%translate([0, -20, -15])rotate([0, 0, 180]) basler_ace();
 		}
 	}
