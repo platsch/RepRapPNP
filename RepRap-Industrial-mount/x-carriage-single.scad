@@ -223,7 +223,7 @@ module x_carriage_single(){
 							rotate([0,90,0])
 								cylinder(r=wall,h=belt_tensioner_length+belt_tensioning_range+1);
 					}
-	
+
 			// belt grip
 			translate([-x_carriage_body_length/2,x_belt_pulley_dia/2,belt_width/2+clearance])
 				rotate([90,0,0]) rotate([0,0,-90])
@@ -243,12 +243,12 @@ module x_carriage_single(){
 								translate([-1,belt_tooth_periode+l*belt_tooth_periode,-(2*belt_thickness_max+2*clearance+2)/2])
 									cube([(belt_tensioner_height/2+belt_width/2+clearance+1)+2,layer_height,2*belt_thickness_max+2*clearance+2]);
 						}
-	
+
 			// belt tensioner screw hole
 			translate([x_carriage_body_length/2-(belt_tensioner_length+belt_tensioning_range/2)-(2*wall+belt_tensioning_nut_height+2*clearance+wall_thin+clearance+belt_tensioning_range),x_belt_pulley_dia/2,0])
 				rotate([0,90,0])
 					cylinder(r=belt_tensioning_screw_dia/2+clearance,h=(belt_tensioner_length+belt_tensioning_range)+(2*wall+belt_tensioning_nut_height+2*clearance+wall_thin+clearance+belt_tensioning_range)+1);
-	
+
 			// belt tensioner thumb wheel trap
 			difference(){
 				translate([x_carriage_body_length/2-(belt_tensioner_length+belt_tensioning_range/2),x_belt_pulley_dia/2,0])
@@ -274,7 +274,7 @@ module x_carriage_single(){
 
 		// stepper motor gearbox and stepper mount screw clearance
 		for(e=[1,-1])
-			translate([e*x_carriage_body_length/4,0,x_carriage_body_height/2]){
+			translate([e*x_carriage_body_length/4+extruder_mount_screw_washer_dia/2,0,x_carriage_body_height/2]){
 				translate([0,wall+1,extruder_back_body_height/2])
 					rotate([0,90,0])
 						rotate([0,0,90])
@@ -299,11 +299,11 @@ module x_carriage_single(){
 		for(e=[0,1])
 			mirror([e,0,0])
 				translate([x_carriage_body_length/2-extruder_mount_screw_washer_dia/2,extruder_mount_screw_nut_height/2+clearance-x_carriage_body_width/2+wall+wall+nema17_gearbox_length-wall-clearance-extruder_mount_screw_nut_height-clearance,x_carriage_body_height/2+extruder_mount_screw_washer_dia/2])
-					rotate([0,-90-45,0])
+					rotate([0,-90,0])
 						rotate([90,0,0])
 							nut_slot_square(extruder_mount_screw_nut_wrench,extruder_mount_screw_nut_height,nema17_width);
 		translate([0,extruder_mount_screw_nut_height/2+clearance-x_carriage_body_width/2+wall+wall+nema17_gearbox_length-wall-clearance-extruder_mount_screw_nut_height-clearance,x_carriage_body_height/2+extruder_mount_screw_washer_dia/2])
-			rotate([0,-90,0])
+			rotate([0,-90-45,0])
 				rotate([90,0,0])
 					nut_slot_square(extruder_mount_screw_nut_wrench,extruder_mount_screw_nut_height,nema17_width);
 
@@ -330,7 +330,3 @@ module x_carriage_single(){
 							cylinder(r=belt_tensioning_screw_dia/2+clearance+wall_thin,h=layer_height);
 	}
 }
-
-
-
-
