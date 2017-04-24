@@ -17,8 +17,8 @@ module pnp_motor_mount() {
     translate([-((28.5+2*wall)/2),-((28.5+2*wall)/2)-3,-40/2]) {
         difference(){
             hull(){
-                translate([0,28.5+wall,50-wall]) cube([28.5+2*wall,wall+6.2,wall]);
-                translate([0,1,0])cube([28.5+2*wall,27.5+2*wall+6.2,wall]);
+                translate([0,28.5+wall,50-wall]) cube([28.5+2*wall,wall+1.5,wall]);
+                translate([0,0,0])cube([28.5+2*wall,28.5+2*wall+1.5,wall]);
             }
             translate([wall,wall,wall/2])cube([28.5,28.5,50]);
             translate([(28.5+2*wall)/2,(28.5+2*wall)/2,0]){
@@ -41,8 +41,8 @@ module pnp_motor_mount() {
             //igus
             for(i=[-1,1]){
                 //translate([(28.5+2*wall)/2,28.5+2*wall,30.5+i*10])rotate([90,0,0])cylinder(h=wall*3, r=4.4/2, center=true);
-                translate([(28.5+2*wall)/2,28.5+1+4,30.5+i*10])rotate([90,0,0])cylinder(h=4, r=12.5/2, center=true);
-                translate([(28.5+2*wall)/2,28.5+0.40+wall+6.2,30.5+i*10])rotate([90,0,0])cylinder(h=5.25, r=6.4/2, center=true);
+                translate([(28.5+2*wall)/2,28.5+1+2.5,30.5+i*10])rotate([90,0,0])cylinder(h=2.5, r=9/2, center=true);
+                translate([(28.5+2*wall)/2,28.5+0.40+wall+1.5,30.5+i*10])rotate([90,0,0])cylinder(h=5.25, r=6.4/2, center=true);
             }
         }
     }
