@@ -21,11 +21,11 @@ module servo_connector(h1_dia, h2_dia, distance, h1_clear, h2_clear){
   difference() {
     union() {
       hull() {
-        translate([distance/2,0,0])cylinder(r=3.5, h=thickness, center=true);
-        translate([-distance/2,0,0])cylinder(r=3.5, h=thickness, center=true);
+        translate([distance/2,0,0])cylinder(r=4, h=thickness, center=true);
+        translate([-distance/2,0,0])cylinder(r=4, h=thickness, center=true);
       }
-      translate([distance/2,0,-thickness/2-h1_clear/2])cylinder(r=3.5, h=h1_clear, center=true);
-      translate([-distance/2,0,-thickness/2-h2_clear/2])cylinder(r=3.5, h=h2_clear, center=true);
+      translate([distance/2,0,-thickness/2-h1_clear/2])cylinder(r=4, h=h1_clear, center=true);
+      translate([-distance/2,0,-thickness/2-h2_clear/2])cylinder(r=4, h=h2_clear, center=true);
     }
     translate([distance/2, 0, -h1_clear])cylinder(d=h1_dia, h=thickness, center=true);
     translate([distance/2, 0, +thickness/2-h1_clear/2])cylinder(d=5.5, h=h1_clear, center=true);
