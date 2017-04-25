@@ -12,9 +12,9 @@ thickness=3;
 $fn=50;
 
 //Syringe
-servo_connector(3.5,2.5,35,0,0);
+//servo_connector(3.5,2.5,35,0,0);
 //PNP
-//servo_connector(3.5,2.5,57.5,0,4.5);
+servo_connector(3.5,2.5,57.5,0,0);
 
 // parameters hole diameter1, hole diameter2, distance, hole1 clearance, hole2 clearance
 module servo_connector(h1_dia, h2_dia, distance, h1_clear, h2_clear){
