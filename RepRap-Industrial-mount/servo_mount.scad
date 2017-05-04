@@ -9,13 +9,24 @@ License: 'GNU Affero General Public License AGPLv3 http://www.gnu.org/licenses/a
 *******************************************************/
 
 $fn=50;
-servo_width=23;
+// small servo (MG90S)
+/*servo_width=23;
 servo_height=12.5;
 servo_mount_width=27.5;
 servo_mount_height=0;
 servo_mount_dia=3;
 thick=4;
 servo_clearance=1.5;
+*/
+
+// large servo (BLS451)
+servo_width=40.5;
+servo_height=20;
+servo_mount_width=50;
+servo_mount_height=5;
+servo_mount_dia=4.5;
+thick=4;
+servo_clearance=3; // syringe: 0; pnp: 1.5
 
 servo_mount();
 
